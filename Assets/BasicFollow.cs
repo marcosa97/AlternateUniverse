@@ -18,25 +18,11 @@ public class BasicFollow : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        bool foundPlayer = false;
-        Collider2D[] hitcolliders = Physics2D.OverlapCircleAll(transform.position, detectRadius);
-
-        int i = 0;
-        while (i < hitcolliders.Length)
+        float distance = Vector2.Distance(Player.instance.GetPosition(), (Vector2)transform.position);
+        if (distance < detectRadius)
         {
-            if (hitcolliders[i].tag == "Player")
-            {
-                playerLocation = hitcolliders[i].transform.position;
-                foundPlayer = true;
-                break;
-            }
-            i++;
-        }
-        moveDirection = playerLocation - (Vector2)transform.position;
-        moveDirection.Normalize();
-
-        if (foundPlayer)
-        {
+            moveDirection = Player.instance.GetPosition() - (Vector2)transform.position;
+            moveDirection.Normalize();
             rb.velocity = moveDirection * moveSpeed;
         }
     }

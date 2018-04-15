@@ -24,6 +24,10 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private GameObject arrow;
     public static Player instance = null;
+    private float timerShoot;
+    [SerializeField]
+    private float timeToShoot;
+    public SpriteRenderer sr;
 
     // Use this for initialization
     void Start () {
@@ -39,10 +43,15 @@ public class Player : MonoBehaviour {
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
+        timerShoot = 0;
     }
 
     private void Update()
     {
+        if (timerShoot < timeToShoot)
+        {
+            timerShoot += Time.deltaTime;
+        }
         UpdateBow(velocity_x, velocity_y);
         Shoot();
     }
@@ -85,20 +94,33 @@ public class Player : MonoBehaviour {
     void UpdateBow(float velocity_x, float velocity_y)
     {
         if (velocity_x > 0)
+        {
             bowPivot.rotation = Quaternion.Euler(0, 0, 0);
+            sr.flipY = false;
+        }
         else if (velocity_x < 0)
+        {
             bowPivot.rotation = Quaternion.Euler(0, 0, 180);
+            sr.flipY = true;
+        }
         else if (velocity_y > 0)
+        {
             bowPivot.rotation = Quaternion.Euler(0, 0, 90);
+            sr.flipY = false;
+        }
         else if (velocity_y < 0)
+        {
             bowPivot.rotation = Quaternion.Euler(0, 0, -90);
+            sr.flipY = false;
+        }
     }
 
     void Shoot()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && timerShoot >= timeToShoot)
         {
             Instantiate(arrow, arrowSpawn.position, bowPivot.rotation);
+            timerShoot = 0;
         }
     }
 
@@ -107,11 +129,19 @@ public class Player : MonoBehaviour {
         if (bowPivot.localRotation.eulerAngles.z == 0)
             return Vector2.right;
         else if (bowPivot.localRotation.eulerAngles.z == 180)
+        {
             return Vector2.left;
+        }
         else if (bowPivot.localRotation.eulerAngles.z == 90)
+        {
             return Vector2.up;
-        else
-            return Vector3.down;
+        }
 
+        return Vector3.down;
+    }
+
+    public Vector2 GetPosition()
+    {
+        return transform.position;
     }
 }
