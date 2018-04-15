@@ -15,12 +15,15 @@ public class SceneSwitch : MonoBehaviour {
 	private Slider slider;
 	[SerializeField]
 	private float timer = 0.0f;
+	[SerializeField]
+	private AudioManager audioManager;
 	// Use this for initialization
 	void Start () {
 		isWaiting = true;
 		isLight = true;
 		player = this.gameObject;
 		slider = GameObject.Find("Slider").GetComponent<Slider>();
+		audioManager = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
 	}
 	
 	// Update is called once per frame
@@ -38,6 +41,10 @@ public class SceneSwitch : MonoBehaviour {
 				else if (!isLight)
 					player.transform.position = new Vector3(-translate_x + prevposx,transform.position.y,0.0f);
 				isLight = !isLight;
+
+				//Switch songs
+				audioManager.ToggleMuteSong("DarkworldTheme", isLight);
+				audioManager.ToggleMuteSong ("OverworldTheme", !isLight);
 			}
 		}
 	}
