@@ -19,26 +19,33 @@ public class Player : MonoBehaviour {
 	private GameObject character;
 	private bool moving;
 	private int pickUpsCount;
+    private Transform bowPivot;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		rb = gameObject.GetComponent<Rigidbody2D>();
 		cam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
 		anim = gameObject.GetComponent<Animator> ();
 		character = this.gameObject;
 		moving = false;
 		pickUpsCount = 0;
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+        bowPivot = transform.Find("BowPivot").transform;
+    }
+
+    private void Update()
+    {
+        UpdateBow(velocity_x, velocity_y);
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
 		velocity_x=Input.GetAxis ("Horizontal");
 		velocity_y = Input.GetAxis ("Vertical");
 		total_velocity = new Vector2 (velocity_x*speed, velocity_y*speed);
 		rb.velocity = total_velocity;
 
-		//Determine if there is movement
-		if (velocity_x == 0f && velocity_y == 0f) {
+        //Determine if there is movement
+        if (velocity_x == 0f && velocity_y == 0f) {
 			moving = false;
 			anim.SetBool ("moving", false);
 		} else {
@@ -48,8 +55,8 @@ public class Player : MonoBehaviour {
 			anim.SetBool ("moving", true);
 			anim.SetFloat ("LastMoveX", velocity_x);
 			anim.SetFloat ("LastMoveY", velocity_y);
-		}
-	}
+        }
+    }
 	//Use for Camera stuff
 	void LateUpdate()
 	{
@@ -64,4 +71,16 @@ public class Player : MonoBehaviour {
 			pickUpsCount++;
 		} 
 	}
+
+    void UpdateBow(float velocity_x, float velocity_y)
+    {
+        if (velocity_x > 0)
+            bowPivot.rotation = Quaternion.Euler(0, 0, 0);
+        else if (velocity_x < 0)
+            bowPivot.rotation = Quaternion.Euler(0, 0, 180);
+        else if (velocity_y > 0)
+            bowPivot.rotation = Quaternion.Euler(0, 0, 90);
+        else if (velocity_y < 0)
+            bowPivot.rotation = Quaternion.Euler(0, 0, -90);
+    }
 }
