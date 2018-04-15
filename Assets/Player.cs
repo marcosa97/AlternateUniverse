@@ -146,4 +146,8 @@ public class Player : MonoBehaviour {
     {
         return transform.position;
     }
+
+	public int GetPickUpsCount() {
+		return pickUpsCount;
+	}
 }
