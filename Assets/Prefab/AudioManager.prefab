@@ -59,8 +59,21 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: OverworldTheme
-    clip: {fileID: 8300000, guid: 68700da4570ca2442a7da666f86c908d, type: 3}
-    volume: 0.113
+    clip: {fileID: 8300000, guid: a551f5cbb2627e1458fd7b2c02542b87, type: 3}
+    volume: 0.283
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: DarkworldTheme
+    clip: {fileID: 8300000, guid: e5ee887bad370fd499b55b5a141b7960, type: 3}
+    volume: 0.283
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: GunShot
+    clip: {fileID: 8300000, guid: 107b8130e6bb5554d8c0746294b59c26, type: 3}
+    volume: 0.113
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  backgroundMusicVolume: 0.283
