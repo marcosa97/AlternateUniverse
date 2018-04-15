@@ -76,4 +76,10 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: SceneSwitchSound
+    clip: {fileID: 8300000, guid: 62f1a18c3cbac75499f93270beea970c, type: 3}
+    volume: 0.401
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   backgroundMusicVolume: 0.283

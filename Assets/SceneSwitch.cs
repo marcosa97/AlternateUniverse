@@ -43,6 +43,7 @@ public class SceneSwitch : MonoBehaviour {
 				isLight = !isLight;
 
 				//Switch songs
+				audioManager.Play("SceneSwitchSound");
 				audioManager.ToggleMuteSong("DarkworldTheme", isLight);
 				audioManager.ToggleMuteSong ("OverworldTheme", !isLight);
 			}
