@@ -18,6 +18,8 @@ public class Player : MonoBehaviour {
 	private Vector2 total_velocity;
 	private GameObject character;
 	private bool moving;
+	private int pickUpsCount;
+
 	// Use this for initialization
 	void Start () {
 		rb = gameObject.GetComponent<Rigidbody2D>();
@@ -25,6 +27,7 @@ public class Player : MonoBehaviour {
 		anim = gameObject.GetComponent<Animator> ();
 		character = this.gameObject;
 		moving = false;
+		pickUpsCount = 0;
 	}
 	
 	// Update is called once per frame
@@ -51,5 +54,13 @@ public class Player : MonoBehaviour {
 	void LateUpdate()
 	{
 		cam.transform.position = new Vector3 (rb.gameObject.transform.position.x,rb.gameObject.transform.position.y,0);
+	}
+
+	//For picking up collectibles
+	void OnTriggerEnter2D(Collider2D other) {
+		if ( other.gameObject.CompareTag("PickUp") ) {
+			other.gameObject.SetActive (false);
+			pickUpsCount++;
+		} 
 	}
 }
