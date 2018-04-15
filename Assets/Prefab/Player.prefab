@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 111314894738048468}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 1785189854688602}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c366156c3de42524bbb85e67b8fab0c9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -133,9 +133,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  rb: {fileID: 0}
-  velocity_x: 0
-  velocity_y: 0
+  rb: {fileID: 50951369639081052}
+  anim: {fileID: 0}
+  velocity_x: 1
+  velocity_y: 1
   speed: 5
   total_velocity: {x: 0, y: 0}
 --- !u!212 &212044325048780310
