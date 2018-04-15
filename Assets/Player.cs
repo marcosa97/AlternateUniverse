@@ -27,7 +27,7 @@ public class Player : MonoBehaviour {
     private float timerShoot;
     [SerializeField]
     private float timeToShoot;
-    public SpriteRenderer sr;
+    private SpriteRenderer sr;
 
     // Use this for initialization
     void Start () {
@@ -44,6 +44,7 @@ public class Player : MonoBehaviour {
         else if (instance != this)
             Destroy(gameObject);
         timerShoot = 0;
+        sr = bowPivot.Find("Bow").GetComponent<SpriteRenderer>();
     }
 
     private void Update()

@@ -4,13 +4,8 @@ using UnityEngine;
 
 public abstract class Health : MonoBehaviour {
     [SerializeField]
-    private int startHealth;
-    private int currentHealth;
-
-	// Use this for initialization
-	void Start () {
-        currentHealth = startHealth;
-	}
+    protected int startHealth;
+    protected int currentHealth;
 
     public void TakeDamage(int dmg)
     {
@@ -22,6 +17,5 @@ public abstract class Health : MonoBehaviour {
     {
         if (currentHealth <= 0)
             Destroy(gameObject);
-        Debug.Log(currentHealth);
     }
 }
