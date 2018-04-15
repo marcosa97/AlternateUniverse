@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI; // Required when Using UI elements.
 
 public class PlayerHealth : Health {
-    public Slider slider;
+    private Slider slider;
 
     private void Start()
     {
+        slider = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Slider>();
         currentHealth = startHealth;
         slider.value = currentHealth;
     }
