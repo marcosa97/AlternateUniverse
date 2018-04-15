@@ -2328,7 +2328,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -10, y: -8, z: 0}
-  m_Size: {x: 18, y: 13, z: 1}
+  m_Size: {x: 18, y: 17, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -2397,149 +2397,9 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 681412283}
-    m_ColliderPaths:
-    - - X: -28750000
-        Y: 49375000
-      - X: -30000000
-        Y: 49375000
-      - X: -31250000
-        Y: 50000000
-      - X: -39375000
-        Y: 50000000
-      - X: -40000000
-        Y: 49375000
-      - X: -41250000
-        Y: 49375000
-      - X: -50000000
-        Y: 45000000
-      - X: -50000000
-        Y: 44375000
-      - X: -51250000
-        Y: 44375000
-      - X: -54375000
-        Y: 43750000
-      - X: -56250000
-        Y: 40625000
-      - X: -56250000
-        Y: 40000000
-      - X: -57500000
-        Y: 40000000
-      - X: -58750000
-        Y: 39375000
-      - X: -58750000
-        Y: 34375000
-      - X: -58125000
-        Y: 30000000
-      - X: -58750000
-        Y: 26250000
-      - X: -58750000
-        Y: 20000000
-      - X: -59375000
-        Y: 20000000
-      - X: -59375000
-        Y: 16875000
-      - X: -58750000
-        Y: 10000000
-      - X: -56875000
-        Y: 10000000
-      - X: -56250000
-        Y: 2500000
-      - X: -54375000
-        Y: 625000
-      - X: -50000000
-        Y: 1250000
-      - X: -40000000
-        Y: 1875000
-      - X: -30000000
-        Y: 1875000
-      - X: -25000000
-        Y: 1250000
-      - X: -20000000
-        Y: 1250000
-      - X: -17500000
-        Y: 625000
-      - X: -15000000
-        Y: 625000
-      - X: -13750000
-        Y: 2500000
-      - X: -13125000
-        Y: 10000000
-      - X: -10625000
-        Y: 17500000
-      - X: -10625000
-        Y: 26875000
-      - X: -11875000
-        Y: 30000000
-      - X: -12500000
-        Y: 30000000
-      - X: -11250000
-        Y: 36875000
-      - X: -11250000
-        Y: 38125000
-      - X: -13125000
-        Y: 40000000
-      - X: -13750000
-        Y: 40000000
-      - X: -13750000
-        Y: 40625000
-      - X: -15625000
-        Y: 43125000
-      - X: -18750000
-        Y: 44375000
-      - X: -20000000
-        Y: 44375000
-      - X: -20000000
-        Y: 45000000
+  m_ColliderPaths: []
   m_CompositePaths:
-    m_Paths:
-    - - {x: -1.375, y: 0.25}
-      - {x: -1.3125, y: 1}
-      - {x: -1.0625, y: 1.75}
-      - {x: -1.0625, y: 2.6875}
-      - {x: -1.1875, y: 3}
-      - {x: -1.25, y: 3}
-      - {x: -1.125, y: 3.6875}
-      - {x: -1.125, y: 3.8125}
-      - {x: -1.3125, y: 4}
-      - {x: -1.375, y: 4}
-      - {x: -1.375, y: 4.0625}
-      - {x: -1.5625, y: 4.3125}
-      - {x: -1.875, y: 4.4375}
-      - {x: -2, y: 4.4375}
-      - {x: -2, y: 4.5}
-      - {x: -2.875, y: 4.9375}
-      - {x: -3, y: 4.9375}
-      - {x: -3.125, y: 5}
-      - {x: -3.9375, y: 5}
-      - {x: -4, y: 4.9375}
-      - {x: -4.125, y: 4.9375}
-      - {x: -5, y: 4.5}
-      - {x: -5, y: 4.4375}
-      - {x: -5.125, y: 4.4375}
-      - {x: -5.4375, y: 4.375}
-      - {x: -5.625, y: 4.0625}
-      - {x: -5.625, y: 4}
-      - {x: -5.75, y: 4}
-      - {x: -5.875, y: 3.9375}
-      - {x: -5.875, y: 3.4375}
-      - {x: -5.8125, y: 3}
-      - {x: -5.875, y: 2.625}
-      - {x: -5.875, y: 2}
-      - {x: -5.9375, y: 2}
-      - {x: -5.9375, y: 1.6875}
-      - {x: -5.875, y: 1}
-      - {x: -5.6875, y: 1}
-      - {x: -5.625, y: 0.25}
-      - {x: -5.4375, y: 0.0625}
-      - {x: -5, y: 0.125}
-      - {x: -4, y: 0.1875}
-      - {x: -3, y: 0.1875}
-      - {x: -2.5, y: 0.125}
-      - {x: -2, y: 0.125}
-      - {x: -1.75, y: 0.0625}
-      - {x: -1.5, y: 0.0625}
+    m_Paths: []
   m_VertexDistance: 0.0005
 --- !u!50 &681412282
 Rigidbody2D:
@@ -2572,7 +2432,7 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
 --- !u!483693784 &681412284
 TilemapRenderer:
@@ -3116,7 +2976,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1785189854688602, guid: f66c3978815cc3045b748ef26d4dee54, type: 2}
       propertyPath: m_Name
-      value: Player (1)
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 212044325048780310, guid: f66c3978815cc3045b748ef26d4dee54,
         type: 2}
@@ -3133,6 +2993,26 @@ Prefab:
       propertyPath: m_Color.b
       value: 0.2352941
       objectReference: {fileID: 0}
+    - target: {fileID: 50951369639081052, guid: f66c3978815cc3045b748ef26d4dee54,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61852243303631360, guid: f66c3978815cc3045b748ef26d4dee54,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61852243303631360, guid: f66c3978815cc3045b748ef26d4dee54,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 50951369639081052, guid: f66c3978815cc3045b748ef26d4dee54,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114425154092996706, guid: f66c3978815cc3045b748ef26d4dee54, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f66c3978815cc3045b748ef26d4dee54, type: 2}
@@ -3142,27 +3022,19 @@ GameObject:
   m_PrefabParentObject: {fileID: 1785189854688602, guid: f66c3978815cc3045b748ef26d4dee54,
     type: 2}
   m_PrefabInternal: {fileID: 918801072}
---- !u!195 &918801074
-NavMeshAgent:
+--- !u!114 &918801074
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 918801073}
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f6532cdee367448b6938a6155fb914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectRadius: 6
+  moveSpeed: 5
 --- !u!1 &1493581910
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,6 +3115,15 @@ Prefab:
     - target: {fileID: 4604941114947274, guid: f66c3978815cc3045b748ef26d4dee54, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50951369639081052, guid: f66c3978815cc3045b748ef26d4dee54,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785189854688602, guid: f66c3978815cc3045b748ef26d4dee54, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f66c3978815cc3045b748ef26d4dee54, type: 2}
