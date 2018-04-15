@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
 	[SerializeField]
     private Rigidbody2D rb;
 	[SerializeField]
+	private Animator anim;
+	[SerializeField]
 	private float velocity_x;
 	[SerializeField]
 	private float velocity_y;
@@ -15,11 +17,14 @@ public class Player : MonoBehaviour {
 	[SerializeField]
 	private Vector2 total_velocity;
 	private GameObject character;
+	private bool moving;
 	// Use this for initialization
 	void Start () {
 		rb = gameObject.GetComponent<Rigidbody2D>();
 		cam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
+		anim = gameObject.GetComponent<Animator> ();
 		character = this.gameObject;
+		moving = false;
 	}
 	
 	// Update is called once per frame
@@ -28,6 +33,19 @@ public class Player : MonoBehaviour {
 		velocity_y = Input.GetAxis ("Vertical");
 		total_velocity = new Vector2 (velocity_x*speed, velocity_y*speed);
 		rb.velocity = total_velocity;
+
+		//Determine if there is movement
+		if (velocity_x == 0f && velocity_y == 0f) {
+			moving = false;
+			anim.SetBool ("moving", false);
+		} else {
+			moving = true;
+
+			//Update animator
+			anim.SetBool ("moving", true);
+			anim.SetFloat ("LastMoveX", velocity_x);
+			anim.SetFloat ("LastMoveY", velocity_y);
+		}
 	}
 	//Use for Camera stuff
 	void LateUpdate()
