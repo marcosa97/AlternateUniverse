@@ -6,6 +6,8 @@ public class AudioManager : MonoBehaviour {
 
 	public Sound[] sounds;
 	public static AudioManager instance;
+	[Range(0f, 1f)]
+	public float backgroundMusicVolume;
 
 	// Use this for initialization
 	void Awake () {
@@ -30,7 +32,9 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	void Start() {
-		Play ("OverworldTheme");
+		ToggleMuteSong ("DarkworldTheme", true);
+		PlayOneShot ("OverworldTheme");
+		PlayOneShot ("DarkworldTheme");
 	}
 	
 	public void Play (string name) {
@@ -42,4 +46,31 @@ public class AudioManager : MonoBehaviour {
 		}
 		s.source.Play ();
 	}
+
+	//For playing songs at the same time
+	public void PlayOneShot (string name) {
+		Sound s = Array.Find (sounds, sound => sound.name == name);
+		if (s == null) {
+			Debug.LogWarning ("Sound: " + name + " not found!");
+			return;
+		}
+		s.source.PlayOneShot(s.source.clip);
+	}
+
+	//if mute is true, the song "name" will be muted
+	//if mute is false, the song "name" will be unmuted
+	public void ToggleMuteSong (string name, bool mute) {
+		Sound s = Array.Find (sounds, sound => sound.name == name);
+		if (s == null) {
+			Debug.LogWarning ("Sound: " + name + " not found!");
+			return;
+		}
+
+		if (mute) {
+			s.source.volume = 0;
+		} else {
+			s.source.volume = backgroundMusicVolume;
+		}
+	}
+		
 }
