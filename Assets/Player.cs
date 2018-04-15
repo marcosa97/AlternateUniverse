@@ -122,6 +122,7 @@ public class Player : MonoBehaviour {
         {
             Instantiate(arrow, arrowSpawn.position, bowPivot.rotation);
             timerShoot = 0;
+            AudioManager.instance.Play("GunShot");
         }
     }
 
