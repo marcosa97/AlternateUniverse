@@ -10,6 +10,9 @@ public class BasicFollow : MonoBehaviour {
     private float moveSpeed;
     private Rigidbody2D rb;
     private Vector2 moveDirection;
+    private float switchTime = 5.0f;
+    private float timer;
+    public bool isWandering;
 
     private void Start()
     {
@@ -18,13 +21,26 @@ public class BasicFollow : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        if (timer <= switchTime)
+        {
+            timer += Time.deltaTime;
+        }
         float distance = Vector2.Distance(Player.instance.GetPosition(), (Vector2)transform.position);
         if (distance < detectRadius)
         {
             moveDirection = Player.instance.GetPosition() - (Vector2)transform.position;
             moveDirection.Normalize();
             rb.velocity = moveDirection * moveSpeed;
+            return;
         }
+        if (timer >= switchTime && isWandering)
+        {
+            timer = 0;
+            moveDirection = Random.insideUnitCircle;
+            moveDirection.Normalize();
+        }
+        if (isWandering)
+            rb.velocity = moveDirection * moveSpeed;
     }
 
     void OnDrawGizmosSelected()
