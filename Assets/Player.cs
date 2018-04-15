@@ -20,6 +20,10 @@ public class Player : MonoBehaviour {
 	private bool moving;
 	private int pickUpsCount;
     private Transform bowPivot;
+    private Transform arrowSpawn;
+    [SerializeField]
+    private GameObject arrow;
+    public static Player instance = null;
 
     // Use this for initialization
     void Start () {
@@ -30,11 +34,17 @@ public class Player : MonoBehaviour {
 		moving = false;
 		pickUpsCount = 0;
         bowPivot = transform.Find("BowPivot").transform;
+        arrowSpawn = bowPivot.Find("Bow").Find("ArrowSpawn").transform;
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
     }
 
     private void Update()
     {
         UpdateBow(velocity_x, velocity_y);
+        Shoot();
     }
 
     // Update is called once per frame
@@ -82,5 +92,26 @@ public class Player : MonoBehaviour {
             bowPivot.rotation = Quaternion.Euler(0, 0, 90);
         else if (velocity_y < 0)
             bowPivot.rotation = Quaternion.Euler(0, 0, -90);
+    }
+
+    void Shoot()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(arrow, arrowSpawn.position, bowPivot.rotation);
+        }
+    }
+
+    public Vector2 GetBowRotation()
+    {
+        if (bowPivot.localRotation.eulerAngles.z == 0)
+            return Vector2.right;
+        else if (bowPivot.localRotation.eulerAngles.z == 180)
+            return Vector2.left;
+        else if (bowPivot.localRotation.eulerAngles.z == 90)
+            return Vector2.up;
+        else
+            return Vector3.down;
+
     }
 }
