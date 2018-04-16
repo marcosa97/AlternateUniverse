@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class Player : MonoBehaviour {
 	[SerializeField]
 	private Camera cam;
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private float timeToShoot;
     private SpriteRenderer sr;
+	public Text score; 
 
     // Use this for initialization
     void Start () {
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour {
             Destroy(gameObject);
         timerShoot = 0;
         sr = bowPivot.Find("Bow").GetComponent<SpriteRenderer>();
+		score.text = "PICKUPS COLLECTED: " + pickUpsCount.ToString () + " / 15 ";
     }
 
     private void Update()
@@ -89,6 +92,7 @@ public class Player : MonoBehaviour {
 			other.gameObject.SetActive (false);
 			FindObjectOfType<AudioManager> ().Play ("PickUpCoin");
 			pickUpsCount++;
+			score.text = "PICKUPS COLLECTED: " + pickUpsCount.ToString () + " / 15 ";
 		} 
 	}
 
